@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private static final int READ_EXTERNAL_STORAGE_PERMISSION_CODE = 1002;
 
     // private static final String UPLOAD_URL = "http://127.0.0.1:8000/api_root/Post/";
-    private static final String UPLOAD_URL = "http://10.0.2.2:8000/api_root/Post/";
-    //private static final String UPLOAD_URL = "http://jklee3409.pythonanywhere.com/api_root/Post/";
+    // private static final String UPLOAD_URL = "http://10.0.2.2:8000/api_root/Post/";
+    private static final String UPLOAD_URL = "http://jklee3409.pythonanywhere.com/api_root/Post/";
     Uri imageUri = null;
 
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
@@ -134,8 +134,8 @@ public class MainActivity extends AppCompatActivity {
                 URL url = new URL(UPLOAD_URL);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
-                connection.setRequestProperty("Authorization", "JWT 849d4e718e7bb6c089ebd3698a73488732aeae17"); // 로컬
-                //connection.setRequestProperty("Authorization", "JWT 979ccf58e2f0474c9182f4067a289ec7614d1e56"); // 웹
+                //connection.setRequestProperty("Authorization", "JWT 849d4e718e7bb6c089ebd3698a73488732aeae17"); // 로컬
+                connection.setRequestProperty("Authorization", "JWT 979ccf58e2f0474c9182f4067a289ec7614d1e56"); // 웹
                 connection.setRequestProperty("Content-Type", "application/json");
 
                 JSONObject jsonObject = new JSONObject();
